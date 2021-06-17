@@ -1,0 +1,794 @@
+Angular JS
+
+1.	Search  Application with Angular JS
+2.	<!DOCTYPE html>
+3.	<html>
+4.	<head>
+5.	<script src="./script/angular.min.js"></script>
+6.	</head>
+7.	<body ng-app="mymodule">
+8.	 <div ng-controller="myctrl">
+9.	 Search : <input type="text" ng-model="m"/>
+10.	 		Data :<label ng-bind="m"></label>
+11.	 </div>
+12.	 <script>
+13.	 	angular.module("mymodule",[]).controller("myctrl",function($scope){
+14.	 		
+15.	 			$scope.m="Angular JS Application";
+16.	 	});
+17.	 
+18.	 </script>
+19.	</body>
+20.	</html>
+2. Employee Application by using AngularJS
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+8.	EID : <input type="text" ng-model="eid"/><br/>
+9.	ENAME:<input type="text" ng-model="ename"/><br/>
+10.	ESALARY:<input  type="text" ng-model="esalary"/><br/>
+11.	<button ng-click="store()">STORE</button>
+12.	<hr/>
+13.	<table>
+14.	<tr>
+15.	<th>EID</th><th>ENAME</th><th>ESALARY</th>
+16.	</tr>
+17.	<tr>
+18.	<td ng-bind="id"></td><td ng-bind="name"></td><td ng-bind="salary"></td>
+19.	</tr>
+20.	</table>
+21.	<script>
+22.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+23.	$scope.eid=0;
+24.	$scope.ename="";
+25.	$scope.esalary=0.0;
+26.	$scope.store=function(){
+27.	$scope.id=$scope.eid;
+28.	$scope.name=$scope.ename;
+29.	$scope.salary=$scope.esalary;
+30.	};
+31.	});
+32.	</script>
+33.	</div>
+34.	</body>
+35.	</html>
+
+3. AngularJS Appliction by using Expression :
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+8.	EID : <input type="text" ng-model="eid"/><br/>
+9.	ENAME:<input type="text" ng-model="ename"/><br/>
+10.	ESALARY:<input  type="text" ng-model="esalary"/><br/>
+11.	<button ng-click="store()">STORE</button>
+12.	<hr/>
+13.	<table>
+14.	<tr>
+15.	<th>EID</th><th>ENAME</th><th>ESALARY</th>
+16.	</tr>
+17.	<tr>
+18.	<td>{{id}}</td><td>{{name}}</td><td>{{salary}}</td>
+19.	</tr>
+20.	</table>
+21.	<script>
+22.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+23.	$scope.eid=0;
+24.	$scope.ename="";
+25.	$scope.esalary=0.0;
+26.	$scope.store=function(){
+27.	$scope.id=$scope.eid;
+28.	$scope.name=$scope.ename;
+29.	$scope.salary=$scope.esalary;
+
+30.	};
+31.	});
+32.	</script>
+33.	</div>
+34.	</body>
+35.	</html>
+
+4. AngularJS Application with Filters:
+
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+8.	EID : <input type="text" ng-model="eid"/><br/>
+9.	ENAME:<input type="text" ng-model="ename"/><br/>
+10.	ESALARY:<input  type="text" ng-model="esalary"/><br/>
+11.	<button ng-click="store()">STORE</button>
+
+12.	<hr/>
+13.	<table>
+14.	<tr>
+15.	<th>EID</th><th>ENAME</th><th>ESALARY</th>
+16.	</tr>
+17.	<tr>
+18.	<td>{{id}}</td><td>{{name | uppercase}}</td><td>{{salary}}</td>
+19.	</tr>
+20.	</table>
+21.	<script>
+22.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+23.	$scope.eid=0;
+24.	$scope.ename="";
+25.	$scope.esalary=0.0;
+26.	$scope.store=function(){
+27.	$scope.id=$scope.eid;
+28.	$scope.name=$scope.ename;
+29.	$scope.salary=$scope.esalary;
+30.	};
+31.	});
+32.	</script>
+33.	</div>
+34.	</body>
+35.	</html>
+
+
+
+
+4. AngularJS Application with Expression (currency, uppercase)
+
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+8.	EID : <input type="text" ng-model="eid"/><br/>
+9.	ENAME:<input type="text" ng-model="ename"/><br/>
+10.	ESALARY:<input  type="text" ng-model="esalary"/><br/>
+11.	<button ng-click="store()">STORE</button>
+12.	<hr/>
+13.	<table>
+14.	<tr>
+15.	<th>EID</th><th>ENAME</th><th>ESALARY</th>
+16.	</tr>
+17.	<tr>
+18.	<td>{{id}}</td><td>{{name | uppercase}}</td><td>{{ salary*2.0 | currency }}</td>
+19.	</tr>
+20.	</table>
+21.	<script>
+22.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+23.	$scope.eid=0;
+24.	$scope.ename="";
+25.	$scope.esalary=0.0;
+26.	$scope.store=function(){
+27.	$scope.id=$scope.eid;
+28.	$scope.name=$scope.ename;
+29.	$scope.salary=$scope.esalary;
+30.	};
+31.	});
+32.	</script>
+33.	</div>
+34.	</body>
+35.	</html>
+
+
+
+
+
+
+
+
+5. AngularJS Application with Expression(uppercase,currency with  Indian rupees  conversion):
+
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+8.	EID : <input type="text" ng-model="eid"/><br/>
+9.	ENAME:<input type="text" ng-model="ename"/><br/>
+10.	ESALARY:<input  type="text" ng-model="esalary"/><br/>
+11.	<button ng-click="store()">STORE</button>
+12.	<hr/>
+13.	<table>
+14.	<tr>
+15.	<th>EID</th><th>ENAME</th><th>ESALARY</th>
+16.	</tr>
+17.	<tr>
+18.	<td>{{id}}</td><td>{{name | uppercase}}</td><td>{{ salary*2.0 | currency :"&#8377;"}}</td>
+19.	</tr>
+20.	</table>
+21.	<script>
+22.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+23.	$scope.eid=0;
+24.	$scope.ename="";
+25.	$scope.esalary=0.0;
+26.	$scope.store=function(){
+27.	$scope.id=$scope.eid;
+28.	$scope.name=$scope.ename;
+29.	$scope.salary=$scope.esalary;
+30.	};
+31.	});
+32.	</script>
+33.	</div>
+34.	</body>
+35.	</html>
+
+
+
+
+
+
+
+
+
+6. AngularJS Application Showing Country Code  and Country Name:
+
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+
+8.	<table>
+9.	<tr>
+10.	<th>COUNTRY CODE</th><th>COUNTRY NAME</th>
+11.	</tr>
+12.	<tr ng-repeat="country in countries">
+13.	<td>{{country.code}}</td><td>{{country.name}}</td>
+14.	</tr>
+15.	</table>
+16.	<script>
+17.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+18.	$scope.countries=[
+19.	{"name": "Afghanistan", "code": "AF"},
+20.	{"name": "land Islands", "code": "AX"},
+21.	{"name": "Albania", "code": "AL"},
+22.	{"name": "Algeria", "code": "DZ"},
+23.	{"name": "American Samoa", "code": "AS"},
+24.	{"name": "AndorrA", "code": "AD"},
+25.	{"name": "Angola", "code": "AO"},
+26.	{"name": "Anguilla", "code": "AI"},
+27.	{"name": "Antarctica", "code": "AQ"},
+28.	{"name": "Antigua and Barbuda", "code": "AG"},
+29.	{"name": "Argentina", "code": "AR"},
+30.	{"name": "Armenia", "code": "AM"},
+31.	{"name": "Aruba", "code": "AW"},
+32.	{"name": "Australia", "code": "AU"},
+33.	{"name": "Austria", "code": "AT"},
+34.	{"name": "Azerbaijan", "code": "AZ"},
+35.	{"name": "Bahamas", "code": "BS"},
+36.	{"name": "Bahrain", "code": "BH"},
+37.	{"name": "Bangladesh", "code": "BD"},
+38.	{"name": "Barbados", "code": "BB"},
+39.	{"name": "Belarus", "code": "BY"},
+40.	{"name": "Belgium", "code": "BE"},
+41.	{"name": "Belize", "code": "BZ"},
+42.	{"name": "Benin", "code": "BJ"},
+43.	{"name": "Bermuda", "code": "BM"},
+44.	{"name": "Bhutan", "code": "BT"},
+45.	{"name": "Bolivia", "code": "BO"},
+46.	{"name": "Bosnia and Herzegovina", "code": "BA"},
+47.	{"name": "Botswana", "code": "BW"},
+48.	{"name": "Bouvet Island", "code": "BV"},
+49.	{"name": "Brazil", "code": "BR"},
+50.	{"name": "British Indian Ocean Territory", "code": "IO"},
+51.	{"name": "Brunei Darussalam", "code": "BN"},
+52.	{"name": "Bulgaria", "code": "BG"},
+53.	{"name": "Burkina Faso", "code": "BF"},
+54.	{"name": "Burundi", "code": "BI"},
+55.	{"name": "Cambodia", "code": "KH"},
+56.	{"name": "Cameroon", "code": "CM"},
+57.	{"name": "Canada", "code": "CA"},
+58.	{"name": "Cape Verde", "code": "CV"},
+59.	{"name": "Cayman Islands", "code": "KY"},
+60.	{"name": "Central African Republic", "code": "CF"},
+61.	{"name": "Chad", "code": "TD"},
+62.	{"name": "Chile", "code": "CL"},
+63.	{"name": "China", "code": "CN"},
+64.	{"name": "Christmas Island", "code": "CX"},
+65.	{"name": "Cocos (Keeling) Islands", "code": "CC"},
+66.	{"name": "Colombia", "code": "CO"},
+67.	{"name": "Comoros", "code": "KM"},
+68.	{"name": "Congo", "code": "CG"},
+69.	{"name": "Congo, The Democratic Republic of the", "code": "CD"},
+70.	{"name": "Cook Islands", "code": "CK"},
+71.	{"name": "Costa Rica", "code": "CR"},
+72.	{"name": "Cote D\"Ivoire", "code": "CI"},
+73.	{"name": "Croatia", "code": "HR"},
+74.	{"name": "Cuba", "code": "CU"},
+75.	{"name": "Cyprus", "code": "CY"},
+76.	{"name": "Czech Republic", "code": "CZ"},
+77.	{"name": "Denmark", "code": "DK"},
+78.	{"name": "Djibouti", "code": "DJ"},
+79.	{"name": "Dominica", "code": "DM"},
+80.	{"name": "Dominican Republic", "code": "DO"},
+81.	{"name": "Ecuador", "code": "EC"},
+82.	{"name": "Egypt", "code": "EG"},
+83.	{"name": "El Salvador", "code": "SV"},
+84.	{"name": "Equatorial Guinea", "code": "GQ"},
+85.	{"name": "Eritrea", "code": "ER"},
+86.	{"name": "Estonia", "code": "EE"},
+87.	{"name": "Ethiopia", "code": "ET"},
+88.	{"name": "Falkland Islands (Malvinas)", "code": "FK"},
+89.	{"name": "Faroe Islands", "code": "FO"},
+90.	{"name": "Fiji", "code": "FJ"},
+91.	{"name": "Finland", "code": "FI"},
+92.	{"name": "France", "code": "FR"},
+93.	{"name": "French Guiana", "code": "GF"},
+94.	{"name": "French Polynesia", "code": "PF"},
+95.	{"name": "French Southern Territories", "code": "TF"},
+96.	{"name": "Gabon", "code": "GA"},
+97.	{"name": "Gambia", "code": "GM"},
+98.	{"name": "Georgia", "code": "GE"},
+99.	{"name": "Germany", "code": "DE"},
+100.	{"name": "Ghana", "code": "GH"},
+101.	{"name": "Gibraltar", "code": "GI"},
+102.	{"name": "Greece", "code": "GR"},
+103.	{"name": "Greenland", "code": "GL"},
+104.	{"name": "Grenada", "code": "GD"},
+105.	{"name": "Guadeloupe", "code": "GP"},
+106.	{"name": "Guam", "code": "GU"},
+107.	{"name": "Guatemala", "code": "GT"},
+108.	{"name": "Guernsey", "code": "GG"},
+109.	{"name": "Guinea", "code": "GN"},
+110.	{"name": "Guinea-Bissau", "code": "GW"},
+111.	{"name": "Guyana", "code": "GY"},
+112.	{"name": "Haiti", "code": "HT"},
+113.	{"name": "Heard Island and Mcdonald Islands", "code": "HM"},
+114.	{"name": "Holy See (Vatican City State)", "code": "VA"},
+115.	{"name": "Honduras", "code": "HN"},
+116.	{"name": "Hong Kong", "code": "HK"},
+117.	{"name": "Hungary", "code": "HU"},
+118.	{"name": "Iceland", "code": "IS"},
+119.	{"name": "India", "code": "IN"},
+120.	{"name": "Indonesia", "code": "ID"},
+121.	{"name": "Iran, Islamic Republic Of", "code": "IR"},
+122.	{"name": "Iraq", "code": "IQ"},
+123.	{"name": "Ireland", "code": "IE"},
+124.	{"name": "Isle of Man", "code": "IM"},
+125.	{"name": "Israel", "code": "IL"},
+126.	{"name": "Italy", "code": "IT"},
+127.	{"name": "Jamaica", "code": "JM"},
+128.	{"name": "Japan", "code": "JP"},
+129.	{"name": "Jersey", "code": "JE"},
+130.	{"name": "Jordan", "code": "JO"},
+131.	{"name": "Kazakhstan", "code": "KZ"},
+132.	{"name": "Kenya", "code": "KE"},
+133.	{"name": "Kiribati", "code": "KI"},
+134.	{"name": "Korea, Democratic People\"S Republic of", "code": "KP"},
+135.	{"name": "Korea, Republic of", "code": "KR"},
+136.	{"name": "Kuwait", "code": "KW"},
+137.	{"name": "Kyrgyzstan", "code": "KG"},
+138.	{"name": "Lao People\"S Democratic Republic", "code": "LA"},
+139.	{"name": "Latvia", "code": "LV"},
+140.	{"name": "Lebanon", "code": "LB"},
+141.	{"name": "Lesotho", "code": "LS"},
+142.	{"name": "Liberia", "code": "LR"},
+143.	{"name": "Libyan Arab Jamahiriya", "code": "LY"},
+144.	{"name": "Liechtenstein", "code": "LI"},
+145.	{"name": "Lithuania", "code": "LT"},
+146.	{"name": "Luxembourg", "code": "LU"},
+147.	{"name": "Macao", "code": "MO"},
+148.	{"name": "Macedonia, The Former Yugoslav Republic of", "code": "MK"},
+149.	{"name": "Madagascar", "code": "MG"},
+150.	{"name": "Malawi", "code": "MW"},
+151.	{"name": "Malaysia", "code": "MY"},
+152.	{"name": "Maldives", "code": "MV"},
+153.	{"name": "Mali", "code": "ML"},
+154.	{"name": "Malta", "code": "MT"},
+155.	{"name": "Marshall Islands", "code": "MH"},
+156.	{"name": "Martinique", "code": "MQ"},
+157.	{"name": "Mauritania", "code": "MR"},
+158.	{"name": "Mauritius", "code": "MU"},
+159.	{"name": "Mayotte", "code": "YT"},
+160.	{"name": "Mexico", "code": "MX"},
+161.	{"name": "Micronesia, Federated States of", "code": "FM"},
+162.	{"name": "Moldova, Republic of", "code": "MD"},
+163.	{"name": "Monaco", "code": "MC"},
+164.	{"name": "Mongolia", "code": "MN"},
+165.	{"name": "Montenegro", "code": "ME"},
+166.	{"name": "Montserrat", "code": "MS"},
+167.	{"name": "Morocco", "code": "MA"},
+168.	{"name": "Mozambique", "code": "MZ"},
+169.	{"name": "Myanmar", "code": "MM"},
+170.	{"name": "Namibia", "code": "NA"},
+171.	{"name": "Nauru", "code": "NR"},
+172.	{"name": "Nepal", "code": "NP"},
+173.	{"name": "Netherlands", "code": "NL"},
+174.	{"name": "Netherlands Antilles", "code": "AN"},
+175.	{"name": "New Caledonia", "code": "NC"},
+176.	{"name": "New Zealand", "code": "NZ"},
+177.	{"name": "Nicaragua", "code": "NI"},
+178.	{"name": "Niger", "code": "NE"},
+179.	{"name": "Nigeria", "code": "NG"},
+180.	{"name": "Niue", "code": "NU"},
+181.	{"name": "Norfolk Island", "code": "NF"},
+182.	{"name": "Northern Mariana Islands", "code": "MP"},
+183.	{"name": "Norway", "code": "NO"},
+184.	{"name": "Oman", "code": "OM"},
+185.	{"name": "Pakistan", "code": "PK"},
+186.	{"name": "Palau", "code": "PW"},
+187.	{"name": "Palestinian Territory, Occupied", "code": "PS"},
+188.	{"name": "Panama", "code": "PA"},
+189.	{"name": "Papua New Guinea", "code": "PG"},
+190.	{"name": "Paraguay", "code": "PY"},
+191.	{"name": "Peru", "code": "PE"},
+192.	{"name": "Philippines", "code": "PH"},
+193.	{"name": "Pitcairn", "code": "PN"},
+194.	{"name": "Poland", "code": "PL"},
+195.	{"name": "Portugal", "code": "PT"},
+196.	{"name": "Puerto Rico", "code": "PR"},
+197.	{"name": "Qatar", "code": "QA"},
+198.	{"name": "Reunion", "code": "RE"},
+199.	{"name": "Romania", "code": "RO"},
+200.	{"name": "Russian Federation", "code": "RU"},
+201.	{"name": "RWANDA", "code": "RW"},
+202.	{"name": "Saint Helena", "code": "SH"},
+203.	{"name": "Saint Kitts and Nevis", "code": "KN"},
+204.	{"name": "Saint Lucia", "code": "LC"},
+205.	{"name": "Saint Pierre and Miquelon", "code": "PM"},
+206.	{"name": "Saint Vincent and the Grenadines", "code": "VC"},
+207.	{"name": "Samoa", "code": "WS"},
+208.	{"name": "San Marino", "code": "SM"},
+209.	{"name": "Sao Tome and Principe", "code": "ST"},
+210.	{"name": "Saudi Arabia", "code": "SA"},
+211.	{"name": "Senegal", "code": "SN"},
+212.	{"name": "Serbia", "code": "RS"},
+213.	{"name": "Seychelles", "code": "SC"},
+214.	{"name": "Sierra Leone", "code": "SL"},
+215.	{"name": "Singapore", "code": "SG"},
+216.	{"name": "Slovakia", "code": "SK"},
+217.	{"name": "Slovenia", "code": "SI"},
+218.	{"name": "Solomon Islands", "code": "SB"},
+219.	{"name": "Somalia", "code": "SO"},
+220.	{"name": "South Africa", "code": "ZA"},
+221.	{"name": "South Georgia and the South Sandwich Islands", "code": "GS"},
+222.	{"name": "Spain", "code": "ES"},
+223.	{"name": "Sri Lanka", "code": "LK"},
+224.	{"name": "Sudan", "code": "SD"},
+225.	{"name": "Suriname", "code": "SR"},
+226.	{"name": "Svalbard and Jan Mayen", "code": "SJ"},
+227.	{"name": "Swaziland", "code": "SZ"},
+228.	{"name": "Sweden", "code": "SE"},
+229.	{"name": "Switzerland", "code": "CH"},
+230.	{"name": "Syrian Arab Republic", "code": "SY"},
+231.	{"name": "Taiwan, Province of China", "code": "TW"},
+232.	{"name": "Tajikistan", "code": "TJ"},
+233.	{"name": "Tanzania, United Republic of", "code": "TZ"},
+234.	{"name": "Thailand", "code": "TH"},
+235.	{"name": "Timor-Leste", "code": "TL"},
+236.	{"name": "Togo", "code": "TG"},
+237.	{"name": "Tokelau", "code": "TK"},
+238.	{"name": "Tonga", "code": "TO"},
+239.	{"name": "Trinidad and Tobago", "code": "TT"},
+240.	{"name": "Tunisia", "code": "TN"},
+241.	{"name": "Turkey", "code": "TR"},
+242.	{"name": "Turkmenistan", "code": "TM"},
+243.	{"name": "Turks and Caicos Islands", "code": "TC"},
+244.	{"name": "Tuvalu", "code": "TV"},
+245.	{"name": "Uganda", "code": "UG"},
+246.	{"name": "Ukraine", "code": "UA"},
+247.	{"name": "United Arab Emirates", "code": "AE"},
+248.	{"name": "United Kingdom", "code": "GB"},
+249.	{"name": "United States", "code": "US"},
+250.	{"name": "United States Minor Outlying Islands", "code": "UM"},
+251.	{"name": "Uruguay", "code": "UY"},
+252.	{"name": "Uzbekistan", "code": "UZ"},
+253.	{"name": "Vanuatu", "code": "VU"},
+254.	{"name": "Venezuela", "code": "VE"},
+255.	{"name": "Viet Nam", "code": "VN"},
+256.	{"name": "Virgin Islands, British", "code": "VG"},
+257.	{"name": "Virgin Islands, U.S.", "code": "VI"},
+258.	{"name": "Wallis and Futuna", "code": "WF"},
+259.	{"name": "Western Sahara", "code": "EH"},
+260.	{"name": "Yemen", "code": "YE"},
+261.	{"name": "Zambia", "code": "ZM"},
+262.	{"name": "Zimbabwe", "code": "ZW"}
+263.	];
+264.	});
+
+265.	</script>
+266.	</div>
+267.	</body>
+268.	</html>
+
+
+
+
+
+
+
+
+7. AngularJS Application with Filter(search the country name):
+
+1.	<!DOCTYPE html>
+2.	<html>
+3.	<head>
+4.	<script src="./script/angular.min.js"></script>
+5.	</head>
+6.	<body ng-app="mymodule">
+7.	<div ng-controller="myctrl">
+
+8.	<table border="1" align="center">
+9.	<tr>
+10.	<th>COUNTRY CODE</th><th>COUNTRY NAME</th>
+11.	</tr>
+12.	<tr>
+13.	<th colspan=2>COUNTRIES</th>
+14.	</tr>
+15.	<tr>
+16.	<th colspan=2>
+17.	<input type="text" ng-model="searchText" placeholder="Enter  CountryName to Search..."/>
+18.	</th>
+19.	</tr>
+20.	<tr ng-repeat="country in countries | filter:searchText | orderBy:'code'">
+21.	<td>{{country.code}}</td>
+22.	<td>{{country.name}}</td>
+23.	</tr>
+24.	</table>
+25.	<script>
+26.	angular.module("mymodule",[]).controller("myctrl",function($scope){
+27.	$scope.countries=[
+28.	{"name": "Afghanistan", "code": "AF"},
+29.	{"name": "land Islands", "code": "AX"},
+30.	{"name": "Albania", "code": "AL"},
+31.	{"name": "Algeria", "code": "DZ"},
+32.	{"name": "American Samoa", "code": "AS"},
+33.	{"name": "AndorrA", "code": "AD"},
+34.	{"name": "Angola", "code": "AO"},
+35.	{"name": "Anguilla", "code": "AI"},
+36.	{"name": "Antarctica", "code": "AQ"},
+37.	{"name": "Antigua and Barbuda", "code": "AG"},
+38.	{"name": "Argentina", "code": "AR"},
+39.	{"name": "Armenia", "code": "AM"},
+40.	{"name": "Aruba", "code": "AW"},
+41.	{"name": "Australia", "code": "AU"},
+42.	{"name": "Austria", "code": "AT"},
+43.	{"name": "Azerbaijan", "code": "AZ"},
+44.	{"name": "Bahamas", "code": "BS"},
+45.	{"name": "Bahrain", "code": "BH"},
+46.	{"name": "Bangladesh", "code": "BD"},
+47.	{"name": "Barbados", "code": "BB"},
+48.	{"name": "Belarus", "code": "BY"},
+49.	{"name": "Belgium", "code": "BE"},
+50.	{"name": "Belize", "code": "BZ"},
+51.	{"name": "Benin", "code": "BJ"},
+52.	{"name": "Bermuda", "code": "BM"},
+53.	{"name": "Bhutan", "code": "BT"},
+54.	{"name": "Bolivia", "code": "BO"},
+55.	{"name": "Bosnia and Herzegovina", "code": "BA"},
+56.	{"name": "Botswana", "code": "BW"},
+57.	{"name": "Bouvet Island", "code": "BV"},
+58.	{"name": "Brazil", "code": "BR"},
+59.	{"name": "British Indian Ocean Territory", "code": "IO"},
+60.	{"name": "Brunei Darussalam", "code": "BN"},
+61.	{"name": "Bulgaria", "code": "BG"},
+62.	{"name": "Burkina Faso", "code": "BF"},
+63.	{"name": "Burundi", "code": "BI"},
+64.	{"name": "Cambodia", "code": "KH"},
+65.	{"name": "Cameroon", "code": "CM"},
+66.	{"name": "Canada", "code": "CA"},
+67.	{"name": "Cape Verde", "code": "CV"},
+68.	{"name": "Cayman Islands", "code": "KY"},
+69.	{"name": "Central African Republic", "code": "CF"},
+70.	{"name": "Chad", "code": "TD"},
+71.	{"name": "Chile", "code": "CL"},
+72.	{"name": "China", "code": "CN"},
+73.	{"name": "Christmas Island", "code": "CX"},
+74.	{"name": "Cocos (Keeling) Islands", "code": "CC"},
+75.	{"name": "Colombia", "code": "CO"},
+76.	{"name": "Comoros", "code": "KM"},
+77.	{"name": "Congo", "code": "CG"},
+78.	{"name": "Congo, The Democratic Republic of the", "code": "CD"},
+79.	{"name": "Cook Islands", "code": "CK"},
+80.	{"name": "Costa Rica", "code": "CR"},
+81.	{"name": "Cote D\"Ivoire", "code": "CI"},
+82.	{"name": "Croatia", "code": "HR"},
+83.	{"name": "Cuba", "code": "CU"},
+84.	{"name": "Cyprus", "code": "CY"},
+85.	{"name": "Czech Republic", "code": "CZ"},
+86.	{"name": "Denmark", "code": "DK"},
+87.	{"name": "Djibouti", "code": "DJ"},
+88.	{"name": "Dominica", "code": "DM"},
+89.	{"name": "Dominican Republic", "code": "DO"},
+90.	{"name": "Ecuador", "code": "EC"},
+91.	{"name": "Egypt", "code": "EG"},
+92.	{"name": "El Salvador", "code": "SV"},
+93.	{"name": "Equatorial Guinea", "code": "GQ"},
+94.	{"name": "Eritrea", "code": "ER"},
+95.	{"name": "Estonia", "code": "EE"},
+96.	{"name": "Ethiopia", "code": "ET"},
+97.	{"name": "Falkland Islands (Malvinas)", "code": "FK"},
+98.	{"name": "Faroe Islands", "code": "FO"},
+99.	{"name": "Fiji", "code": "FJ"},
+100.	{"name": "Finland", "code": "FI"},
+101.	{"name": "France", "code": "FR"},
+102.	{"name": "French Guiana", "code": "GF"},
+103.	{"name": "French Polynesia", "code": "PF"},
+104.	{"name": "French Southern Territories", "code": "TF"},
+105.	{"name": "Gabon", "code": "GA"},
+106.	{"name": "Gambia", "code": "GM"},
+107.	{"name": "Georgia", "code": "GE"},
+108.	{"name": "Germany", "code": "DE"},
+109.	{"name": "Ghana", "code": "GH"},
+110.	{"name": "Gibraltar", "code": "GI"},
+111.	{"name": "Greece", "code": "GR"},
+112.	{"name": "Greenland", "code": "GL"},
+113.	{"name": "Grenada", "code": "GD"},
+114.	{"name": "Guadeloupe", "code": "GP"},
+115.	{"name": "Guam", "code": "GU"},
+116.	{"name": "Guatemala", "code": "GT"},
+117.	{"name": "Guernsey", "code": "GG"},
+118.	{"name": "Guinea", "code": "GN"},
+119.	{"name": "Guinea-Bissau", "code": "GW"},
+120.	{"name": "Guyana", "code": "GY"},
+121.	{"name": "Haiti", "code": "HT"},
+122.	{"name": "Heard Island and Mcdonald Islands", "code": "HM"},
+123.	{"name": "Holy See (Vatican City State)", "code": "VA"},
+124.	{"name": "Honduras", "code": "HN"},
+125.	{"name": "Hong Kong", "code": "HK"},
+126.	{"name": "Hungary", "code": "HU"},
+127.	{"name": "Iceland", "code": "IS"},
+128.	{"name": "India", "code": "IN"},
+129.	{"name": "Indonesia", "code": "ID"},
+130.	{"name": "Iran, Islamic Republic Of", "code": "IR"},
+131.	{"name": "Iraq", "code": "IQ"},
+132.	{"name": "Ireland", "code": "IE"},
+133.	{"name": "Isle of Man", "code": "IM"},
+134.	{"name": "Israel", "code": "IL"},
+135.	{"name": "Italy", "code": "IT"},
+136.	{"name": "Jamaica", "code": "JM"},
+137.	{"name": "Japan", "code": "JP"},
+138.	{"name": "Jersey", "code": "JE"},
+139.	{"name": "Jordan", "code": "JO"},
+140.	{"name": "Kazakhstan", "code": "KZ"},
+141.	{"name": "Kenya", "code": "KE"},
+142.	{"name": "Kiribati", "code": "KI"},
+143.	{"name": "Korea, Democratic People\"S Republic of", "code": "KP"},
+144.	{"name": "Korea, Republic of", "code": "KR"},
+145.	{"name": "Kuwait", "code": "KW"},
+146.	{"name": "Kyrgyzstan", "code": "KG"},
+147.	{"name": "Lao People\"S Democratic Republic", "code": "LA"},
+148.	{"name": "Latvia", "code": "LV"},
+149.	{"name": "Lebanon", "code": "LB"},
+150.	{"name": "Lesotho", "code": "LS"},
+151.	{"name": "Liberia", "code": "LR"},
+152.	{"name": "Libyan Arab Jamahiriya", "code": "LY"},
+153.	{"name": "Liechtenstein", "code": "LI"},
+154.	{"name": "Lithuania", "code": "LT"},
+155.	{"name": "Luxembourg", "code": "LU"},
+156.	{"name": "Macao", "code": "MO"},
+157.	{"name": "Macedonia, The Former Yugoslav Republic of", "code": "MK"},
+158.	{"name": "Madagascar", "code": "MG"},
+159.	{"name": "Malawi", "code": "MW"},
+160.	{"name": "Malaysia", "code": "MY"},
+161.	{"name": "Maldives", "code": "MV"},
+162.	{"name": "Mali", "code": "ML"},
+163.	{"name": "Malta", "code": "MT"},
+164.	{"name": "Marshall Islands", "code": "MH"},
+165.	{"name": "Martinique", "code": "MQ"},
+166.	{"name": "Mauritania", "code": "MR"},
+167.	{"name": "Mauritius", "code": "MU"},
+168.	{"name": "Mayotte", "code": "YT"},
+169.	{"name": "Mexico", "code": "MX"},
+170.	{"name": "Micronesia, Federated States of", "code": "FM"},
+171.	{"name": "Moldova, Republic of", "code": "MD"},
+172.	{"name": "Monaco", "code": "MC"},
+173.	{"name": "Mongolia", "code": "MN"},
+174.	{"name": "Montenegro", "code": "ME"},
+175.	{"name": "Montserrat", "code": "MS"},
+176.	{"name": "Morocco", "code": "MA"},
+177.	{"name": "Mozambique", "code": "MZ"},
+178.	{"name": "Myanmar", "code": "MM"},
+179.	{"name": "Namibia", "code": "NA"},
+180.	{"name": "Nauru", "code": "NR"},
+181.	{"name": "Nepal", "code": "NP"},
+182.	{"name": "Netherlands", "code": "NL"},
+183.	{"name": "Netherlands Antilles", "code": "AN"},
+184.	{"name": "New Caledonia", "code": "NC"},
+185.	{"name": "New Zealand", "code": "NZ"},
+186.	{"name": "Nicaragua", "code": "NI"},
+187.	{"name": "Niger", "code": "NE"},
+188.	{"name": "Nigeria", "code": "NG"},
+189.	{"name": "Niue", "code": "NU"},
+190.	{"name": "Norfolk Island", "code": "NF"},
+191.	{"name": "Northern Mariana Islands", "code": "MP"},
+192.	{"name": "Norway", "code": "NO"},
+193.	{"name": "Oman", "code": "OM"},
+194.	{"name": "Pakistan", "code": "PK"},
+195.	{"name": "Palau", "code": "PW"},
+196.	{"name": "Palestinian Territory, Occupied", "code": "PS"},
+197.	{"name": "Panama", "code": "PA"},
+198.	{"name": "Papua New Guinea", "code": "PG"},
+199.	{"name": "Paraguay", "code": "PY"},
+200.	{"name": "Peru", "code": "PE"},
+201.	{"name": "Philippines", "code": "PH"},
+202.	{"name": "Pitcairn", "code": "PN"},
+203.	{"name": "Poland", "code": "PL"},
+204.	{"name": "Portugal", "code": "PT"},
+205.	{"name": "Puerto Rico", "code": "PR"},
+206.	{"name": "Qatar", "code": "QA"},
+207.	{"name": "Reunion", "code": "RE"},
+208.	{"name": "Romania", "code": "RO"},
+209.	{"name": "Russian Federation", "code": "RU"},
+210.	{"name": "RWANDA", "code": "RW"},
+211.	{"name": "Saint Helena", "code": "SH"},
+212.	{"name": "Saint Kitts and Nevis", "code": "KN"},
+213.	{"name": "Saint Lucia", "code": "LC"},
+214.	{"name": "Saint Pierre and Miquelon", "code": "PM"},
+215.	{"name": "Saint Vincent and the Grenadines", "code": "VC"},
+216.	{"name": "Samoa", "code": "WS"},
+217.	{"name": "San Marino", "code": "SM"},
+218.	{"name": "Sao Tome and Principe", "code": "ST"},
+219.	{"name": "Saudi Arabia", "code": "SA"},
+220.	{"name": "Senegal", "code": "SN"},
+221.	{"name": "Serbia", "code": "RS"},
+222.	{"name": "Seychelles", "code": "SC"},
+223.	{"name": "Sierra Leone", "code": "SL"},
+224.	{"name": "Singapore", "code": "SG"},
+225.	{"name": "Slovakia", "code": "SK"},
+226.	{"name": "Slovenia", "code": "SI"},
+227.	{"name": "Solomon Islands", "code": "SB"},
+228.	{"name": "Somalia", "code": "SO"},
+229.	{"name": "South Africa", "code": "ZA"},
+230.	{"name": "South Georgia and the South Sandwich Islands", "code": "GS"},
+231.	{"name": "Spain", "code": "ES"},
+232.	{"name": "Sri Lanka", "code": "LK"},
+233.	{"name": "Sudan", "code": "SD"},
+234.	{"name": "Suriname", "code": "SR"},
+235.	{"name": "Svalbard and Jan Mayen", "code": "SJ"},
+236.	{"name": "Swaziland", "code": "SZ"},
+237.	{"name": "Sweden", "code": "SE"},
+238.	{"name": "Switzerland", "code": "CH"},
+239.	{"name": "Syrian Arab Republic", "code": "SY"},
+240.	{"name": "Taiwan, Province of China", "code": "TW"},
+241.	{"name": "Tajikistan", "code": "TJ"},
+242.	{"name": "Tanzania, United Republic of", "code": "TZ"},
+243.	{"name": "Thailand", "code": "TH"},
+244.	{"name": "Timor-Leste", "code": "TL"},
+245.	{"name": "Togo", "code": "TG"},
+246.	{"name": "Tokelau", "code": "TK"},
+247.	{"name": "Tonga", "code": "TO"},
+248.	{"name": "Trinidad and Tobago", "code": "TT"},
+249.	{"name": "Tunisia", "code": "TN"},
+250.	{"name": "Turkey", "code": "TR"},
+251.	{"name": "Turkmenistan", "code": "TM"},
+252.	{"name": "Turks and Caicos Islands", "code": "TC"},
+253.	{"name": "Tuvalu", "code": "TV"},
+254.	{"name": "Uganda", "code": "UG"},
+255.	{"name": "Ukraine", "code": "UA"},
+256.	{"name": "United Arab Emirates", "code": "AE"},
+257.	{"name": "United Kingdom", "code": "GB"},
+258.	{"name": "United States", "code": "US"},
+259.	{"name": "United States Minor Outlying Islands", "code": "UM"},
+260.	{"name": "Uruguay", "code": "UY"},
+261.	{"name": "Uzbekistan", "code": "UZ"},
+262.	{"name": "Vanuatu", "code": "VU"},
+263.	{"name": "Venezuela", "code": "VE"},
+264.	{"name": "Viet Nam", "code": "VN"},
+265.	{"name": "Virgin Islands, British", "code": "VG"},
+266.	{"name": "Virgin Islands, U.S.", "code": "VI"},
+267.	{"name": "Wallis and Futuna", "code": "WF"},
+268.	{"name": "Western Sahara", "code": "EH"},
+269.	{"name": "Yemen", "code": "YE"},
+270.	{"name": "Zambia", "code": "ZM"},
+271.	{"name": "Zimbabwe", "code": "ZW"}
+272.	];
+273.	});
+
+274.	</script>
+275.	</div>
+276.	</body>
+277.	</html>
+
+
+https://dzone.com/articles/list-of-all-countries-in-json
